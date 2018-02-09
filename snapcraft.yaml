@@ -1,0 +1,20 @@
+name: 8att13-5nak35
+version: '1.0'
+summary: Self-Developed two player game on a single keyboard
+description: |
+     Enjoy the war of space as you and your rival bet their snakes to eat the most among 10 bits of food and emerge as a Battle Champion : Battle Snakes. You don't need to setup a wlan, lan or even have an internet access to play this small game.
+icon: ./bin1/Resources/logo.png
+grade: stable
+confinement: strict
+apps:
+     8att13-5nak35:
+          command: chmod +x ./bin1/BattleSnakes.jar | java -jar ./bin1/BattleSnakes.jar
+parts:
+     8att13-5nak35:
+          plugin: jdk
+          source: ./bin1
+          build: |
+               export JAVA_HOME="usr/lib/jvm/java-8-openjdk-amd64"
+               export bin1
+          build-packages:
+               - openjdk-8-jdk
